@@ -37,7 +37,7 @@
   <PropertyGroup>
     <ProjectGuid>88c3c725-a964-4793-9ca1-f20df7c177c6</ProjectGuid>
     <TargetPlatformVersion>10.0.19041.0</TargetPlatformVersion>
-    <TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+    <TargetPlatformMinVersion>10.0.18362.0</TargetPlatformMinVersion>
     <AssetTargetFallback>net5.0-windows$(TargetPlatformVersion);$(AssetTargetFallback)</AssetTargetFallback>
     <DefaultLanguage>ko-KR</DefaultLanguage>
     <AppxPackageSigningEnabled>false</AppxPackageSigningEnabled>

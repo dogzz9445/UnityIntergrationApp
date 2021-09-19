@@ -1,13 +1,39 @@
-﻿<Window
-    x:Class="UnityIntergrationApp.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:UnityIntergrationApp"
-    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d">
+﻿<Window x:Class="UnityIntergrationApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="using:UnityIntergrationApp"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="1080" />
+        </Grid.ColumnDefinitions>
+        <NavigationView Grid.Column="0"
+                        x:Name="nvMainView">
+            <NavigationView.MenuItems>
+                <NavigationViewItemSeparator />
+                <NavigationViewItemHeader Content="시나리오 설정" />
+                <NavigationViewItem Icon="Play" Content="시나리오 불러오기" />
+                <NavigationViewItem Icon="Save" Content="시나리오 만들기"/>
+                <NavigationViewItemSeparator />
+                <NavigationViewItemHeader Content="시뮬레이션" />
+                <NavigationViewItem Icon="Refresh" />
+                <NavigationViewItem Icon="Download" />
+                <NavigationViewItem Icon="Download" />
+            </NavigationView.MenuItems>
+        </NavigationView>
+        <Grid Grid.Column="1"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+            <Border BorderThickness="1"
+                    BorderBrush="DarkSlateGray"
+                    Width="auto"
+                    Height="auto">
+
+            </Border>
+        </Grid>
+    </Grid>
 </Window>
