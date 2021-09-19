@@ -12,6 +12,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using UnityIntergrationApp.Pages;
 
 // To learn more about WinUI, the WinUI project structure,
 // and more about our project templates, see: http://aka.ms/winui-project-info.
@@ -26,6 +27,29 @@ namespace UnityIntergrationApp
         public MainWindow()
         {
             this.InitializeComponent();
+        }
+
+        private void nvMainView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
+        {
+            if (args.IsSettingsSelected)
+            {
+                mainContentFrame.Navigate(typeof(SettingsPage));
+            }
+            else
+            {
+                var selectedItem = (Microsoft.UI.Xaml.Controls.NavigationViewItem)args.SelectedItem;
+                if (selectedItem != null)
+                {
+                    string selectedItemTag = ((string)selectedItem.Tag);
+                    if (selectedItemTag != null && selectedItemTag != "")
+                    {
+                        sender.Header = selectedItemTag;
+                        string pageName = "UnityIntergrationApp.Pages." + selectedItemTag;
+                        Type pageType = Type.GetType(pageName);
+                        mainContentFrame.Navigate(pageType);
+                    }
+                }
+            }
         }
 
         //private void myButton_Click(object sender, RoutedEventArgs e)

@@ -12,18 +12,21 @@
             <ColumnDefinition Width="1080" />
         </Grid.ColumnDefinitions>
         <NavigationView Grid.Column="0"
-                        x:Name="nvMainView">
+                        x:Name="nvMainView"
+                        SelectionChanged="nvMainView_SelectionChanged">
             <NavigationView.MenuItems>
                 <NavigationViewItemSeparator />
-                <NavigationViewItemHeader Content="시나리오 설정" />
-                <NavigationViewItem Icon="Play" Content="시나리오 불러오기" />
-                <NavigationViewItem Icon="Save" Content="시나리오 만들기"/>
+                <NavigationViewItemHeader Content="시나리오 설정"/>
+                <NavigationViewItem Icon="Save"
+                                    Content="시나리오 선택"
+                                    Tag="ScenarioPage" />
                 <NavigationViewItemSeparator />
                 <NavigationViewItemHeader Content="시뮬레이션" />
                 <NavigationViewItem Icon="Refresh" />
                 <NavigationViewItem Icon="Download" />
                 <NavigationViewItem Icon="Download" />
             </NavigationView.MenuItems>
+            <Frame x:Name="mainContentFrame"/>
         </NavigationView>
         <Grid Grid.Column="1"
               HorizontalAlignment="Stretch"
