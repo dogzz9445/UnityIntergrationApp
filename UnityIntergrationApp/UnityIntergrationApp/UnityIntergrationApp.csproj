@@ -10,8 +10,10 @@
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
   <ItemGroup>
+    <None Remove="Pages\BuildingPage.xaml" />
     <None Remove="Pages\ScenarioPage.xaml" />
     <None Remove="Pages\SettingsPage.xaml" />
+    <None Remove="Pages\UnityViewerPage.xaml" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,6 +31,18 @@
 
   <ItemGroup>
     <Folder Include="Pages\Components\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\UnityViewerPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\BuildingPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>

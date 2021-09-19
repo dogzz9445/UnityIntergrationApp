@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="UnityIntergrationApp.Pages.UnityViewerPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnityIntergrationApp.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource NavigationViewExpandedPaneBackground}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" 
+              VerticalAlignment="Stretch" >
+            <TextBlock VerticalAlignment="Center" FontSize="30" Text="유니티 콘텐츠"/>
+        </Grid>
+        <Border Grid.Row="1"
+                BorderBrush="White"
+                BorderThickness="1" />
+        <Grid Grid.Row="2"
+              VerticalAlignment="Stretch"
+              HorizontalAlignment="Left">
+            <CommandBar Background="Transparent"
+                        VerticalAlignment="Center"
+                        IsOpen="False"
+                        DefaultLabelPosition="Right">
+                <AppBarButton Icon="Add"
+                              Label="Add" />
+                <AppBarButton Icon="Edit"
+                              Label="Edit" />
+                <AppBarButton Icon="Share"
+                              Label="Share" />
+                <CommandBar.SecondaryCommands>
+                    <AppBarButton Icon="Setting"
+                                  Label="Settings">
+                        <AppBarButton.KeyboardAccelerators>
+                            <KeyboardAccelerator Modifiers="Control"
+                                                 Key="I" />
+                        </AppBarButton.KeyboardAccelerators>
+                    </AppBarButton>
+                </CommandBar.SecondaryCommands>
+            </CommandBar>
+        </Grid>
+    </Grid>
+</Page>

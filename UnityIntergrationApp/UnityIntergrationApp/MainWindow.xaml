@@ -16,7 +16,10 @@
                         SelectionChanged="nvMainView_SelectionChanged">
             <NavigationView.MenuItems>
                 <NavigationViewItemSeparator />
-                <NavigationViewItemHeader Content="시나리오 설정"/>
+                <NavigationViewItemHeader Content="시나리오 콘텐츠" />
+                <NavigationViewItem Icon="Map"
+                                    Content="건물 설정"
+                                    Tag="BuildingPage" />
                 <NavigationViewItem Icon="Save"
                                     Content="시나리오 선택"
                                     Tag="ScenarioPage" />
@@ -35,7 +38,7 @@
                     BorderBrush="DarkSlateGray"
                     Width="auto"
                     Height="auto">
-
+                <Frame x:Name="unityViewerContentFrame"/>
             </Border>
         </Grid>
     </Grid>

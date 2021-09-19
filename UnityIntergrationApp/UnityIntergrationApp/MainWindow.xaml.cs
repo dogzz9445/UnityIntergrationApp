@@ -27,6 +27,8 @@ namespace UnityIntergrationApp
         public MainWindow()
         {
             this.InitializeComponent();
+
+            unityViewerContentFrame.Navigate(Type.GetType("UnityIntergrationApp.Pages.UnityViewerPage"));
         }
 
         private void nvMainView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)

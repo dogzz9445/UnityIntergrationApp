@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="UnityIntergrationApp.Pages.ScenarioPage"
+    x:Class="UnityIntergrationApp.Pages.BuildingPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:UnityIntergrationApp.Pages"
@@ -9,6 +9,6 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock Text="시나리오 설정" />
+        <TextBlock Text="건물 설정"/>
     </Grid>
 </Page>
