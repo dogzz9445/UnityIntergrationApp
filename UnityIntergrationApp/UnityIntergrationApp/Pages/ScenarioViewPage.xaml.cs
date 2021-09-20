@@ -9,7 +9,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Numerics;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -22,15 +21,14 @@ namespace UnityIntergrationApp.Pages
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class UnityViewerPage : Page
+    public sealed partial class ScenarioViewPage : Page
     {
-        public UnityViewerPage()
+        public ScenarioViewPage()
         {
             this.InitializeComponent();
-
-            SharedShadow.Receivers.Add(GridRootUnityViewerPage);
-
-            TestRectangle.Translation += new Vector3(0, 0, 32);
+        
         }
+
+        
     }
 }

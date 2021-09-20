@@ -17,6 +17,9 @@
             <NavigationView.MenuItems>
                 <NavigationViewItemSeparator />
                 <NavigationViewItemHeader Content="시나리오 콘텐츠" />
+                <NavigationViewItem Icon="View" 
+                                    Content="시나리오 보기"
+                                    Tag="ScenarioViewPage"/>
                 <NavigationViewItem Icon="Map"
                                     Content="건물 설정"
                                     Tag="BuildingPage" />

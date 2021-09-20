@@ -29,6 +29,8 @@ namespace UnityIntergrationApp
             this.InitializeComponent();
 
             unityViewerContentFrame.Navigate(Type.GetType("UnityIntergrationApp.Pages.UnityViewerPage"));
+            mainContentFrame.Navigate(Type.GetType("UnityIntergrationApp.Pages.ScenarioViewPage"));
+            nvMainView.Header = "시나리오 보기";
         }
 
         private void nvMainView_SelectionChanged(NavigationView sender, NavigationViewSelectionChangedEventArgs args)
@@ -45,7 +47,7 @@ namespace UnityIntergrationApp
                     string selectedItemTag = ((string)selectedItem.Tag);
                     if (selectedItemTag != null && selectedItemTag != "")
                     {
-                        sender.Header = selectedItemTag;
+                        sender.Header = selectedItem.Content.ToString();
                         string pageName = "UnityIntergrationApp.Pages." + selectedItemTag;
                         Type pageType = Type.GetType(pageName);
                         mainContentFrame.Navigate(pageType);
