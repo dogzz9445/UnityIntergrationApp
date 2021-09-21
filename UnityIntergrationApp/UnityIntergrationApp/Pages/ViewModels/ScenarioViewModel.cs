@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnityIntergrationApp.Pages.ViewModels
 {
-    public class ScenarioViewModel
+    public class ScenarioViewModel : BaseViewModel
     {
 
     }
