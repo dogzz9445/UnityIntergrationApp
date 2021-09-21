@@ -28,7 +28,5 @@ namespace UnityIntergrationApp.Pages
             this.InitializeComponent();
         
         }
-
-        
     }
 }
