@@ -1,0 +1,17 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnityIntergrationApp.Pages.Views"
+                    xmlns:models="using:UnityIntergrationApp.Pages.Models">
+
+    <DataTemplate x:Name="ScenarioViewDataTemplate"
+                  x:DataType="models:Scenario">
+        <Grid Width="100"
+              CornerRadius="8">
+            <Image Source="{x:Bind ImageFilePath}"
+                   Stretch="UniformToFill" />
+
+
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>
