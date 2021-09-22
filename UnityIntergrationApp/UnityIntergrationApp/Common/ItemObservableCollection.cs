@@ -72,12 +72,8 @@ namespace UnityIntergrationApp.Common
 
         private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            if (ItemPropertyChanged != null)
-            {
-                ItemPropertyChanged(sender, e);
-            }
+            OnPropertyChanged(e);
+            OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
-        
-        public event PropertyChangedEventHandler ItemPropertyChanged;
     }
 }

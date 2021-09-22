@@ -1,23 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityIntergrationApp.Common;
 
 namespace UnityIntergrationApp.Pages.Models
 {
     public class Building : BaseModel
     {
-        private ObservableDictionary<string, float> m_yFloorPlans;
+        private float m_buildingName;
+        private float m_numFloors;
+        private float m_maxYFloorPlan;
+        private float m_minYFloorPlan;
+        private ObservableCollection<float> m_yFloorPlans;
 
-        public Dictionary<string, float> YFloorPlans
+        public ObservableCollection<float> YFloorPlans
         {
             get => m_yFloorPlans;
-            set
-            {
-                m_yFloorPlans = value;
-                RaisePropertyChangedEvent("YFloorPlans");
-            }
+            set => SetObservableProperty(ref m_yFloorPlans, value);
         }
     }
 }

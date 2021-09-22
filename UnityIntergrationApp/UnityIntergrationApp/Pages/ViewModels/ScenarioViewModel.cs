@@ -11,7 +11,6 @@ namespace UnityIntergrationApp.Pages.ViewModels
     public class ScenarioViewModel : BaseViewModel
     {
         public ItemObservableCollection<Scenario> m_scenarios;
-
         public ItemObservableCollection<Scenario> Scenarios { get; set; }
 
         public ScenarioViewModel()

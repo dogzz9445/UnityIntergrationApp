@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.CompilerServices;
 
 namespace UnityIntergrationApp.Pages.ViewModels
 {
@@ -11,12 +8,39 @@ namespace UnityIntergrationApp.Pages.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] String propertyName = null)
+        {
+            if (Equals(storage, value))
+            {
+                return false;
+            }
+            storage = value;
+            RaisePropertyChangedEvent(propertyName);
+            return true;
+        }
+
+        protected bool SetObservableProperty<T>(ref T storage, T value, [CallerMemberName] String propertyName = null) where T : INotifyPropertyChanged
+        {
+            if (storage != null)
+            {
+                storage.PropertyChanged -= new PropertyChangedEventHandler(RaisePropertyChangedEvent);
+            }
+            bool result = SetProperty(ref storage, value);
+            if (storage != null)
+            {
+                storage.PropertyChanged += new PropertyChangedEventHandler(RaisePropertyChangedEvent);
+            }
+            return result;
+        }
+
         protected void RaisePropertyChangedEvent(string propertyName)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        protected void RaisePropertyChangedEvent(object sender, PropertyChangedEventArgs eventArgs)
+        {
+            PropertyChanged?.Invoke(sender, eventArgs);
         }
     }
 }
