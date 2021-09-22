@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace UnityIntergrationApp.Utils
+namespace UnityIntergrationApp.Common
 {
     class ItemObservableCollection<T> : ObservableCollection<T>
         where T : INotifyPropertyChanged
