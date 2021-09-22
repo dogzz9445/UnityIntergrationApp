@@ -12,24 +12,46 @@ namespace UnityIntergrationApp.Pages.Models
         private string m_description;
         private string m_imageFilePath;
         private string m_fbxFilePath;
-        private Dictionary<string, float> m_yFloorPlans;
 
         public string Title
         {
-            get => m_title; set
+            get => m_title;
+            set
             {
                 m_title = value;
                 RaisePropertyChangedEvent("Title");
             }
         }
-        public string Description { get => m_description; set => m_description = value; }
-        public string ImageFilePath { get => m_imageFilePath; set => m_imageFilePath = value; }
-        public string FbxFilePath { get => m_fbxFilePath; set => m_fbxFilePath = value; }
-        public Dictionary<string, float> YFloorPlans { get => m_yFloorPlans; set => m_yFloorPlans = value; }
+        public string Description
+        {
+            get => m_description;
+            set
+            {
+                m_description = value;
+                RaisePropertyChangedEvent("Description");
+            }
+        }
+        public string ImageFilePath
+        {
+            get => m_imageFilePath;
+            set
+            {
+                m_imageFilePath = value;
+                RaisePropertyChangedEvent("ImageFilePath");
+            }
+        }
+        public string FbxFilePath
+        {
+            get => m_fbxFilePath;
+            set
+            {
+                m_fbxFilePath = value;
+                RaisePropertyChangedEvent("FbxFilePath");
+            }
+        }
 
         public Scenario()
         {
-
         }
     }
 }

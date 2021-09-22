@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace UnityIntergrationApp.Common
 {
-    class ItemObservableCollection<T> : ObservableCollection<T>
+    public class ItemObservableCollection<T> : ObservableCollection<T>
         where T : INotifyPropertyChanged
     {
         public ItemObservableCollection() : base() 
