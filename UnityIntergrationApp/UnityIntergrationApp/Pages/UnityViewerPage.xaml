@@ -7,6 +7,15 @@
       mc:Ignorable="d"
       Background="{ThemeResource NavigationViewExpandedPaneBackground}">
 
+    <Page.Resources>
+        <!-- 스타일 -->
+
+
+        <!-- 데이터 템플릿 -->
+
+
+    </Page.Resources>
+
     <Grid>
         <Grid.Resources>
             <ThemeShadow x:Name="SharedShadow" />

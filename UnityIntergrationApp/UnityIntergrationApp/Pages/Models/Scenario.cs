@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UnityIntergrationApp.Pages.Models
 {
-    public class Scenario
+    public class Scenario : BaseModel
     {
         private string m_title;
         private string m_description;
@@ -14,7 +14,14 @@ namespace UnityIntergrationApp.Pages.Models
         private string m_fbxFilePath;
         private Dictionary<string, float> m_yFloorPlans;
 
-        public string Title { get => m_title; set => m_title = value; }
+        public string Title
+        {
+            get => m_title; set
+            {
+                m_title = value;
+                RaisePropertyChangedEvent("Title");
+            }
+        }
         public string Description { get => m_description; set => m_description = value; }
         public string ImageFilePath { get => m_imageFilePath; set => m_imageFilePath = value; }
         public string FbxFilePath { get => m_fbxFilePath; set => m_fbxFilePath = value; }

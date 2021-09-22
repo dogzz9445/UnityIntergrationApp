@@ -8,6 +8,21 @@
       mc:Ignorable="d"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
+    <Page.Resources>
+        <!-- 스타일 -->
+        
+        
+        <!-- 데이터 템플릿 -->
+        <DataTemplate x:Name="ScenarioViewDataTemplate"
+                      x:DataType="models:Scenario">
+            <Grid Width="100"
+                  CornerRadius="8">
+                <Image Source="{x:Bind ImageFilePath}"
+                       Stretch="UniformToFill" />
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
     <GridView x:Name="ScenarioViewGridView"
               ItemTemplate="{StaticResource ScenarioViewDataTemplate}">
         <GridView.ItemContainerStyle>
