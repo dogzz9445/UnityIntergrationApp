@@ -8,7 +8,7 @@ using UnityIntergrationApp.Common;
 
 namespace UnityIntergrationApp.Pages.Models
 {
-    public class Building : BaseModel
+    public class Building : BindableBase
     {
         private float m_buildingName;
         private float m_numFloors;

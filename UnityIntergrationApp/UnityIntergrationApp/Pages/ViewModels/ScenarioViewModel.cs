@@ -8,7 +8,7 @@ using UnityIntergrationApp.Pages.Models;
 
 namespace UnityIntergrationApp.Pages.ViewModels
 {
-    public class ScenarioViewModel : BaseViewModel
+    public class ScenarioViewModel : BindableBase
     {
         public ItemObservableCollection<Scenario> m_scenarios;
         public ItemObservableCollection<Scenario> Scenarios { get; set; }

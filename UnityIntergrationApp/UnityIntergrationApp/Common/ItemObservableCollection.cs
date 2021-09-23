@@ -56,14 +56,14 @@ namespace UnityIntergrationApp.Common
         {
             if (e.NewItems != null)
             {
-                foreach (Object item in e.NewItems)
+                foreach (object item in e.NewItems)
                 {
                     (item as INotifyPropertyChanged).PropertyChanged += new PropertyChangedEventHandler(OnItemPropertyChanged);
                 }
             }
             if (e.OldItems != null)
             {
-                foreach (Object item in e.OldItems)
+                foreach (object item in e.OldItems)
                 {
                     (item as INotifyPropertyChanged).PropertyChanged -= new PropertyChangedEventHandler(OnItemPropertyChanged);
                 }
@@ -72,7 +72,7 @@ namespace UnityIntergrationApp.Common
 
         private void OnItemPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
-            OnPropertyChanged(e);
+            //OnPropertyChanged(e);
             OnCollectionChanged(new NotifyCollectionChangedEventArgs(NotifyCollectionChangedAction.Reset));
         }
     }

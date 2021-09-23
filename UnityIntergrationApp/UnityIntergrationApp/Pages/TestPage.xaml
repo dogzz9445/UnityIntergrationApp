@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="UnityIntergrationApp.Pages.TestPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UnityIntergrationApp.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:models="using:UnityIntergrationApp.Pages.Models"
+      xmlns:system="using:System"
+      mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <!-- 스타일 -->
+
+
+        <!-- 데이터 템플릿 -->
+        <!--<DataTemplate x:Key="TestListViewDataTemplate"
+                      x:DataType="system:Double">
+            <TextBox Text="{Binding}" />
+        </DataTemplate>-->
+
+    </Page.Resources>
+
+    <Grid>
+        <Border BorderThickness="1"
+                BorderBrush="White">
+            <ListView x:Name="ListViewTest"
+                      BorderThickness="1"
+                      BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}">
+                <ListView.ItemTemplate>
+
+                    <DataTemplate x:DataType="models:TestModel">
+                        <StackPanel>
+                            <TextBox Header="Title"
+                                     Margin="8"
+                                     HorizontalAlignment="Stretch"
+                                     Text="{x:Bind Title}" />
+                            <!--<ListView ItemsSource="{x:Bind Data}"
+                             ItemTemplate="{StaticResource TestListViewDataTemplate}">
+                            </ListView>-->
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Border>
+    </Grid>
+</Page>

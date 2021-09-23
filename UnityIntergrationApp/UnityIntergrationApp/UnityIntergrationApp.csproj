@@ -14,6 +14,7 @@
     <None Remove="Pages\ScenarioPage.xaml" />
     <None Remove="Pages\ScenarioViewPage.xaml" />
     <None Remove="Pages\SettingsPage.xaml" />
+    <None Remove="Pages\TestPage.xaml" />
     <None Remove="Pages\UnityViewerPage.xaml" />
   </ItemGroup>
 
@@ -32,6 +33,12 @@
 
   <ItemGroup>
     <Folder Include="Pages\Components\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Pages\TestPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
 
   <ItemGroup>

@@ -2,13 +2,13 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace UnityIntergrationApp.Pages.Models
+namespace UnityIntergrationApp.Common
 {
-    public class BaseModel : INotifyPropertyChanged
+    public class BindableBase : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] String propertyName = null)
+        protected bool SetProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null)
         {
             if (Equals(storage, value))
             {
@@ -18,8 +18,8 @@ namespace UnityIntergrationApp.Pages.Models
             RaisePropertyChangedEvent(propertyName);
             return true;
         }
-        
-        protected bool SetObservableProperty<T>(ref T storage, T value, [CallerMemberName] String propertyName = null) where T : INotifyPropertyChanged
+
+        protected bool SetObservableProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null) where T : INotifyPropertyChanged
         {
             if (storage != null)
             {

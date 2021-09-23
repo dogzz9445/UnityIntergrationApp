@@ -4,10 +4,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using UnityIntergrationApp.Common;
 
 namespace UnityIntergrationApp.Pages.Models
 {
-    public class Scenario : BaseModel
+    public class Scenario : BindableBase
     {
         private string m_title;
         private string m_description;

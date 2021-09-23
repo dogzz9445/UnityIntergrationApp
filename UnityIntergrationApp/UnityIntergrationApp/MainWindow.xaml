@@ -28,7 +28,9 @@
                                     Tag="ScenarioPage" />
                 <NavigationViewItemSeparator />
                 <NavigationViewItemHeader Content="시뮬레이션" />
-                <NavigationViewItem Icon="Refresh" />
+                <NavigationViewItem Icon="Refresh"
+                                    Content="테스트 페이지"
+                                    Tag="TestPage" />
                 <NavigationViewItem Icon="Download" />
                 <NavigationViewItem Icon="Download" />
             </NavigationView.MenuItems>
