@@ -11,12 +11,12 @@ namespace UnityIntergrationApp.Pages.ViewModels
 {
     public class TestViewModel : BindableBase
     {
-        private ItemObservableCollection<TestModel> m_models;
-        public ItemObservableCollection<TestModel> Models { get; set; }
+        private ObservableCollection<TestModel> m_models;
+        public ObservableCollection<TestModel> Models { get; set; }
 
         public TestViewModel()
         {
-            m_models = new ItemObservableCollection<TestModel>();
+            m_models = new ObservableCollection<TestModel>();
         }
 
         public void TestInitialize()
