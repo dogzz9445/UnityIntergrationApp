@@ -14,34 +14,57 @@
 
 
         <!-- 데이터 템플릿 -->
-        <!--<DataTemplate x:Key="TestListViewDataTemplate"
+        <DataTemplate x:Key="TestItemListViewDataTemplate"
                       x:DataType="system:Double">
-            <TextBox Text="{Binding}" />
-        </DataTemplate>-->
+            <TextBox Text="{x:Bind , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </DataTemplate>
+        
+        <DataTemplate x:Key="TestListViewDataTemplate" 
+                      x:DataType="models:TestModel">
+            <StackPanel>
+                <TextBox Header="Title"
+                         Margin="8"
+                         HorizontalAlignment="Stretch"
+                         x:Phase="1"
+                         Text="{x:Bind Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                <ListView ItemsSource="{x:Bind Data}"
+                          ItemTemplate="{StaticResource TestItemListViewDataTemplate}" />
+            </StackPanel>
+        </DataTemplate>
+
+        <DataTemplate x:Key="TestStringDataTemplate"
+                      x:DataType="system:String">
+            <TextBox Header="Title"
+                     Margin="8"
+                     HorizontalAlignment="Stretch"
+                     x:Phase="1"
+                     Text="{x:Bind f, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            </TextBox>
+        </DataTemplate>
 
     </Page.Resources>
 
     <Grid>
         <Border BorderThickness="1"
                 BorderBrush="White">
-            <ListView x:Name="ListViewTest"
-                      BorderThickness="1"
-                      BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}">
-                <ListView.ItemTemplate>
+            <StackPanel>
+                <ListView Header="ListView"
+                          ItemTemplate="{StaticResource TestListViewDataTemplate}"
+                          x:Name="ListViewTest"
+                          BorderThickness="1"
+                          BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" />
 
-                    <DataTemplate x:DataType="models:TestModel">
-                        <StackPanel>
-                            <TextBox Header="Title"
-                                     Margin="8"
-                                     HorizontalAlignment="Stretch"
-                                     Text="{x:Bind Title}" />
-                            <!--<ListView ItemsSource="{x:Bind Data}"
-                             ItemTemplate="{StaticResource TestListViewDataTemplate}">
-                            </ListView>-->
-                        </StackPanel>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                <ListView Header="ListView2"
+                          ItemTemplate="{StaticResource TestListViewDataTemplate}"
+                          x:Name="ListViewTest2"
+                          BorderThickness="1"
+                          BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" />
+                
+                <ListView Header="ListView3"
+                          x:Name="ListViewTest3"
+                          BorderThickness="1"
+                          BorderBrush="{ThemeResource SystemControlForegroundBaseMediumLowBrush}" />
+            </StackPanel>
         </Border>
     </Grid>
 </Page>

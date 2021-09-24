@@ -11,22 +11,22 @@ namespace UnityIntergrationApp.Pages.ViewModels
 {
     public class TestViewModel : BindableBase
     {
-        private ObservableCollection<TestModel> m_models;
-        public ObservableCollection<TestModel> Models { get; set; }
+        private ItemObservableCollection<TestModel> m_models;
+        public ItemObservableCollection<TestModel> Models { get => m_models; set => m_models = value; }
 
         public TestViewModel()
         {
-            m_models = new ObservableCollection<TestModel>();
+            m_models = new ItemObservableCollection<TestModel>();
         }
 
         public void TestInitialize()
         {
             m_models.Add(new TestModel()
             {
-                //Data = new ObservableCollection<float>()
-                //{
-                //    1.0f, 2.0f, 3.0f
-                //},
+                Data = new ObservableCollection<float>()
+                {
+                    1.0f, 2.0f, 3.0f
+                },
             });
         }
     }

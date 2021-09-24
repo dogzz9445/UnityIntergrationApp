@@ -7,6 +7,7 @@ using Microsoft.UI.Xaml.Media;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -27,19 +28,20 @@ namespace UnityIntergrationApp.Pages
         private TestViewModel m_viewModel = new TestViewModel();
         public TestViewModel ViewModel { get => m_viewModel; set => m_viewModel = value; }
 
+        public ObservableCollection<string> StringCollection { get; set; }
+
         public TestPage()
         {
             this.InitializeComponent();
 
-            m_viewModel.TestInitialize();
+            ViewModel.TestInitialize();
+            ListViewTest.ItemsSource = ViewModel.Models;
+            ListViewTest2.ItemsSource = ViewModel.Models;
         }
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             base.OnNavigatedTo(e);
-
-            ListViewTest.ItemsSource = m_viewModel.Models;
         }
-
     }
 }
