@@ -10,8 +10,8 @@ namespace UnityIntergrationApp.Pages.ViewModels
 {
     public class ScenarioViewModel : BindableBase
     {
-        public ItemObservableCollection<Scenario> m_scenarios;
-        public ItemObservableCollection<Scenario> Scenarios { get; set; }
+        private ItemObservableCollection<Scenario> m_scenarios;
+        public ItemObservableCollection<Scenario> Scenarios { get => m_scenarios; set => m_scenarios = value; }
 
         public ScenarioViewModel()
         {

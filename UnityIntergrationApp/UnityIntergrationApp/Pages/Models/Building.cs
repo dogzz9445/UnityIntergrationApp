@@ -14,12 +14,17 @@ namespace UnityIntergrationApp.Pages.Models
         private float m_numFloors;
         private float m_maxYFloorPlan;
         private float m_minYFloorPlan;
-        private ObservableCollection<float> m_yFloorPlans;
+        private ItemObservableCollection<FloorPlan> m_floorPlans;
 
-        public ObservableCollection<float> YFloorPlans
+        public ItemObservableCollection<FloorPlan> FloorPlans
         {
-            get => m_yFloorPlans;
-            set => SetObservableProperty(ref m_yFloorPlans, value);
+            get => m_floorPlans;
+            set => SetObservableProperty(ref m_floorPlans, value);
         }
+    }
+
+    public class FloorPlan : BindableBase
+    {
+
     }
 }
