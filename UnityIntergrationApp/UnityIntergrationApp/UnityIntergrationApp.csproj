@@ -9,6 +9,12 @@
     <RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
     <UseWinUI>true</UseWinUI>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="Pages\Components\IOTextBox.cs" />
+  </ItemGroup>
   <ItemGroup>
     <None Remove="Pages\BuildingPage.xaml" />
     <None Remove="Pages\ScenarioPage.xaml" />

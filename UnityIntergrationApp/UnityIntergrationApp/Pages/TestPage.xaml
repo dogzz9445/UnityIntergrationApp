@@ -14,10 +14,10 @@
 
 
         <!-- 데이터 템플릿 -->
-        <DataTemplate x:Key="TestItemListViewDataTemplate"
+        <!--<DataTemplate x:Key="TestItemListViewDataTemplate"
                       x:DataType="system:Double">
-            <TextBox Text="{x:Bind , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
-        </DataTemplate>
+            <TextBox Text="{x:Bind, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+        </DataTemplate>-->
         
         <DataTemplate x:Key="TestListViewDataTemplate" 
                       x:DataType="models:TestModel">
@@ -32,15 +32,15 @@
             </StackPanel>
         </DataTemplate>
 
-        <DataTemplate x:Key="TestStringDataTemplate"
+        <!--<DataTemplate x:Key="TestStringDataTemplate"
                       x:DataType="system:String">
             <TextBox Header="Title"
                      Margin="8"
                      HorizontalAlignment="Stretch"
                      x:Phase="1"
-                     Text="{x:Bind f, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                     Text="{x:Bind , Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
             </TextBox>
-        </DataTemplate>
+        </DataTemplate>-->
 
     </Page.Resources>
 

@@ -19,7 +19,7 @@ namespace UnityIntergrationApp.Pages.Models
         public ItemObservableCollection<FloorPlan> FloorPlans
         {
             get => m_floorPlans;
-            set => SetObservableProperty(ref m_floorPlans, value);
+            set => SetObservableCollection(ref m_floorPlans, value);
         }
     }
 

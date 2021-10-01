@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
@@ -17,6 +18,20 @@ namespace UnityIntergrationApp.Common
             storage = value;
             RaisePropertyChangedEvent(propertyName);
             return true;
+        }
+
+        protected bool SetObservableCollection<T>(ref T storage, T value, [CallerMemberName] string propertyName = null) where T : INotifyCollectionChanged
+        {
+            if (storage != null)
+            {
+                storage.CollectionChanged -= new NotifyCollectionChangedEventHandler(RaisePropertyChangedEvent);
+            }
+            bool result = SetProperty(ref storage, value);
+            if (storage != null)
+            {
+                storage.CollectionChanged += new NotifyCollectionChangedEventHandler(RaisePropertyChangedEvent);
+            }
+            return result;
         }
 
         protected bool SetObservableProperty<T>(ref T storage, T value, [CallerMemberName] string propertyName = null) where T : INotifyPropertyChanged
@@ -41,6 +56,11 @@ namespace UnityIntergrationApp.Common
         protected void RaisePropertyChangedEvent(object sender, PropertyChangedEventArgs eventArgs)
         {
             PropertyChanged?.Invoke(sender, eventArgs);
+        }
+
+        protected void RaisePropertyChangedEvent(object sender, NotifyCollectionChangedEventArgs eventArgs)
+        {
+            PropertyChanged?.Invoke(sender, new PropertyChangedEventArgs("Collection Changed"));
         }
     }
 }
